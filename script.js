@@ -1,20 +1,19 @@
-//complete this code
 class Rectangle {
-	 constructor(width, height) {
-    this.width = width;
-    this.height = height;
+  constructor(width, height) {
+    this._width = width;
+    this._height = height;
   }
 
-  getWidth() {
-    return this.width;
+  get width() {
+    return this._width;
   }
 
-  getHeight() {
-    return this.height;
+  get height() {
+    return this._height;
   }
 
   getArea() {
-    return this.width * this.height;
+    return this._width * this._height;
   }
 }
 
@@ -27,19 +26,16 @@ class Square extends Rectangle {
     return 4 * this.width;
   }
 }
+const rect = new Rectangle(5, 10);
+console.log(rect.width);  // 5
+console.log(rect.height);  // 10
+console.log(rect.getArea());  // 50
 
-class Square extends Rectangle {
-	var rectangle = new Rectangle(5, 10);
-console.log(rectangle.getWidth());   // Output: 5
-console.log(rectangle.getHeight());  // Output: 10
-console.log(rectangle.getArea());    // Output: 50
-
-var square = new Square(8);
-console.log(square.getWidth());      // Output: 8
-console.log(square.getHeight());     // Output: 8
-console.log(square.getArea());       // Output: 64
-console.log(square.getPerimeter());  // O
-}
+const sq = new Square(7);
+console.log(sq.width);  // 7
+console.log(sq.height);  // 7
+console.log(sq.getArea());  // 49
+console.log(sq.getPerimeter());  // 28
 
 // Do not change the code below this line
 window.Rectangle = Rectangle;
